@@ -10,7 +10,7 @@ class Flower(Plant):
         super().__init__( name, height, age)
         self.color = color
 
-    def bloom(self):
+    def bloom(self, name):
         print(f"{name} is blooming beautifully!")
 
 class Tree(Plant):
