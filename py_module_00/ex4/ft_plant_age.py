@@ -4,5 +4,3 @@ def ft_plant_age():
         print("Plant is ready to havest!")
     else:
         print("Plant needs more time to grow.")
-
-ft_plant_age()
