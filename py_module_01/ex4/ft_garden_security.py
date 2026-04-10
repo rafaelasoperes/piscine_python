@@ -1,48 +1,55 @@
 class SecurePlant:
-    def __init__(self, name):
+    def __init__(self, name, height, age):
         self.name = name
-        self.__height = 0
-        self.__age = 0
+        self._height = round(height, 1)
+        self._age = age
 
     def get_height(self):
-        return self.__height
+        return self._height
 
     def get_age(self):
-        return self.__age
+        return self._age
 
     def set_height(self, value):
         if value < 0:
-            print("\n")
-            print(f"Invalid operation attempted: height {value}cm [REJECTED]")
-            print("Security: Negative height rejected")
+            print(f"{self.name}: Error, height can't be negative")
+            print("Height update rejected")
+
         else:
-            self.__height = value
-            print(f"Height updated: {value}cm [OK]")
+            self._height = value
+            print(f"Height updated: {value}cm")
 
     def set_age(self, value):
         if value < 0:
-            print("\n")
-            print(f"Invalid operation attempted: age {value} days [REJECTED]")
-            print("Security: Negative age rejected")
+            print(f"{self.name}: Error, age can't be negative")
+            print("Age update rejected")
+
         else:
-            self.__age = value
-            print(f"Age updated: {value} days [OK]")
+            self._age = value
+            print(f"Age updated: {value} days")
 
 
 def main():
     print("=== Garden Security System ===")
-    rose = SecurePlant("Rose")
-    print(f"Plant created: {rose.name}")
+
+    rose = SecurePlant("Rose", 15.0, 10)
+    name = rose.name
+    age = rose.get_age()
+    height = rose.get_height()
+    print(f"Plant created: {name}: {height:.1f}cm, {age} days old")
+    print("\n")
 
     rose.set_height(25)
     rose.set_age(30)
+    print("\n")
 
     rose.set_height(-5)
+    rose.set_age(-5)
+    newAge = rose.get_age()
+    newHeight = rose.get_height()
 
-    roseAge = rose.get_age()
-    roseHeight = rose.get_height()
     print("\n")
-    print(f"Current plant: {rose.name} ({roseHeight}cm, {roseAge} days)")
+    print(f"Current state: {name} : {newHeight:.1f}cm, {newAge} days old")
 
 
 if __name__ == "__main__":
