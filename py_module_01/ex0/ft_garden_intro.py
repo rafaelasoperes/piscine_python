@@ -4,7 +4,7 @@ def main():
     age = 3 
 
     print("=== Welcome to my Garden ===")
-    print(f"Plant {name.capitalize()}")
+    print(f"Plant {name}")
     print(f"Height: {height}cm")
     print(f"Age: {age} days")
     print("\n")

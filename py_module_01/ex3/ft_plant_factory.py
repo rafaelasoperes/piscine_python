@@ -4,8 +4,9 @@ class Plant:
         self.height = height
         self.age = age
 
-    def get_status(self):
+    def show(self):
         return f"Created: {self.name} ({self.height}cm, {self.age} days)"
+
 
 def main():
     raw_data = [
@@ -22,12 +23,12 @@ def main():
         garden.append(Plant(name, height, age))
 
     print("=== Plant Factory Output ===")
-    
     for i in range(len(garden)):
-        print(garden[i].get_status())
+        print(garden[i].show())
 
     print("\n")
     print(f"Total plants created: {len(garden)}")
+
 
 if __name__ == "__main__":
     main()

@@ -28,9 +28,9 @@ class SecurePlant:
             self.__age = value
             print(f"Age updated: {value} days [OK]")
 
+
 def main():
     print("=== Garden Security System ===")
-    
     rose = SecurePlant("Rose")
     print(f"Plant created: {rose.name}")
 
@@ -39,8 +39,11 @@ def main():
 
     rose.set_height(-5)
 
+    roseAge = rose.get_age()
+    roseHeight = rose.get_height()
     print("\n")
-    print(f"Current plant: {rose.name} ({rose.get_height()}cm, {rose.get_age()} days)")
+    print(f"Current plant: {rose.name} ({roseHeight}cm, {roseAge} days)")
+
 
 if __name__ == "__main__":
     main()

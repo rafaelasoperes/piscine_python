@@ -3,7 +3,6 @@ class Plant:
         self.name = name
         self.height = height
         self.age = age
-       
         self.initial_height = height
 
     def grow(self, cm):
@@ -12,24 +11,26 @@ class Plant:
     def age_one_day(self):
         self.age += 1
 
-    def get_info(self):
+    def show(self):
         return f"{self.name}: {self.height}cm, {self.age} days old"
+
 
 def main():
     rose = Plant("Rose", 25, 30)
 
     print("=== Day 1 ===")
-    print(rose.get_info())
+    print(rose.show())
 
     for _ in range(6):
         rose.grow(1)
-        rose.age_one_day() 
+        rose.age_one_day()
 
     print("=== Day 7 ===")
-    print(rose.get_info())
+    print(rose.show())
 
     growth_total = rose.height - rose.initial_height
     print(f"Growth this week: +{growth_total}cm")
+
 
 if __name__ == "__main__":
     main()
