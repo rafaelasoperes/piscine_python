@@ -37,10 +37,13 @@ class Plant:
 
 
 class Flower(Plant):
-    def __init__(self, name, height, age, color, isValid):
+    def __init__(self, name, height, age, color):
         super().__init__(name, height, age)
         self.color = color
-        self.isValid = isValid
+        self.isValid = False
+
+    def bloom(self):
+        self.isValid = True
 
     def show(self):
         super().show()
@@ -77,9 +80,10 @@ class Tree(Plant):
 
 
 class Seed(Flower):
-    def __init__(self, name, height, age, color, isValid):
-        super().__init__(name, height, age, color, isValid)
+    def __init__(self, name, height, age, color):
+        super().__init__(name, height, age, color)
         self.seeds = 0
+        self.isValid = False
 
     def bloom(self):
         self.isValid = True
@@ -106,12 +110,13 @@ def main():
     print()
 
     print("=== Flower")
-    rose = Flower("Rose", 15.0, 10, "red", False)
+    rose = Flower("Rose", 15.0, 10, "red")
     rose.show()
     display_any_plant_stats(rose)
+
     print("[asking the rose to grow and bloom]")
     rose.grow(8)
-    rose.isValid = True
+    rose.bloom()
     rose.show()
     display_any_plant_stats(rose)
     print()
@@ -120,14 +125,16 @@ def main():
     oak = Tree("Oak", 200.0, 365, 5.0)
     oak.show()
     display_any_plant_stats(oak)
+
     print("[asking the oak to produce shade]")
     oak.produce_shade()
     display_any_plant_stats(oak)
     print()
 
     print("=== Seed")
-    sunflower = Seed("Sunflower", 80.0, 45, "yellow", True)
+    sunflower = Seed("Sunflower", 80.0, 45, "yellow")
     sunflower.show()
+
     print("[make sunflower grow, age and bloom]")
     sunflower.grow(30)
     sunflower.update_age(20)

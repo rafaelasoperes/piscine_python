@@ -16,10 +16,10 @@ class Plant:
 
 
 class Flower(Plant):
-    def __init__(self, name, height, age, color, isValid=False):
+    def __init__(self, name, height, age, color):
         super().__init__(name, height, age)
         self.color = color
-        self.isValid = isValid
+        self.isValid = False
 
     def bloom(self):
         self.isValid = True
@@ -49,7 +49,6 @@ class Tree(Plant):
         super().show()
         print(f" Trunk diameter: {self.trunk_diameter}cm")
         print(f"[asking the {self.name} to produce shade]")
-        self.produce_shade()
 
 
 class Vegetable(Plant):
@@ -93,6 +92,7 @@ def main():
     print("=== Tree")
     tree = Tree("Oak", 200.0, 365, 5.0)
     tree.show()
+    tree.produce_shade()
 
     print()
     print("=== Vegetable")

@@ -37,18 +37,18 @@ def main():
     age = rose.get_age()
     height = rose.get_height()
     print(f"Plant created: {name}: {height:.1f}cm, {age} days old")
-    print("\n")
+    print()
 
     rose.set_height(25)
     rose.set_age(30)
-    print("\n")
+    print()
 
     rose.set_height(-5)
     rose.set_age(-5)
     newAge = rose.get_age()
     newHeight = rose.get_height()
 
-    print("\n")
+    print()
     print(f"Current state: {name} : {newHeight:.1f}cm, {newAge} days old")
 
 
