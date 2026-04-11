@@ -12,20 +12,23 @@ class Plant:
 
     def show(self):
         print(f"{self.name.capitalize()}:"
-              "{self.height}cm, {self.days} days old")
+              f"{self.height}cm, {self.days} days old")
 
 
 class Flower(Plant):
-    def __init__(self, name, height, age, color, isValid):
+    def __init__(self, name, height, age, color, isValid=False):
         super().__init__(name, height, age)
         self.color = color
         self.isValid = isValid
 
     def bloom(self):
+        self.isValid = True
+
+    def show(self):
         super().show()
         print(f" Color: {self.color}")
         if (self.isValid is True):
-            print(f"{self.name} is blooming beautifully!")
+            print(f" {self.name} is blooming beautifully!")
         else:
             print(f" {self.name} has not bloomed yet")
             print(f"[asking the {self.name} to bloom]")
@@ -37,13 +40,16 @@ class Tree(Plant):
         self.trunk_diameter = round(trunk, 1)
 
     def produce_shade(self):
-        super().show()
-        print(f"Trunk diameter: {self.trunk_diameter}cm")
-        print(f"[asking the {self.name} to produce shade]")
         print(
             f"Tree {self.name} now produces a shade of "
             f"{self.height}cm long and {self.trunk_diameter}cm wide."
         )
+
+    def show(self):
+        super().show()
+        print(f" Trunk diameter: {self.trunk_diameter}cm")
+        print(f"[asking the {self.name} to produce shade]")
+        self.produce_shade()
 
 
 class Vegetable(Plant):
@@ -65,34 +71,37 @@ class Vegetable(Plant):
         self._nutritional = value
 
     def nutricional(self):
+        print(f" Nutritional value: {self._nutritional}")
+
+    def show(self):
         super().show()
-        print(f"Harvest season: {self.harvest}")
-        print(f"Nutritional value: {self._nutritional}")
+        print(f" Harvest season: {self.harvest}")
+        self.nutricional()
 
 
 def main():
     print("=== Garden Plant Types ===")
     print()
     print("=== Flower")
-    flower1 = Flower("Rose", 15.0, 30, "red", False)
-    flower1.bloom()
+    flower = Flower("Rose", 15.0, 30, "red")
+    flower.show()
 
-    flower = Flower("Rose", 15.0, 30, "red", True)
     flower.bloom()
+    flower.show()
 
     print()
     print("=== Tree")
     tree = Tree("Oak", 200.0, 365, 5.0)
-    tree.produce_shade()
+    tree.show()
 
     print()
     print("=== Vegetable")
     vegetable1 = Vegetable("tomato", 5.0, 10, "April")
-    vegetable1.nutricional()
+    vegetable1.show()
 
     vegetable = Vegetable("tomato", 5.0, 10, "April")
     vegetable.set_nutritional(20)
-    vegetable.nutricional()
+    vegetable.show()
 
 
 if __name__ == "__main__":
