@@ -1,8 +1,8 @@
-class SecurePlant:
-    def __init__(self, name, height, age):
-        self.name = name
-        self._height = round(height, 1)
-        self._age = age
+class Plant:
+    def __init__(self, name: str, height: float, age: int):
+        self.name: str = name
+        self._height: float = round(height, 1)
+        self._age: int = age
 
     def get_height(self):
         return self._height
@@ -32,11 +32,10 @@ class SecurePlant:
 def main():
     print("=== Garden Security System ===")
 
-    rose = SecurePlant("Rose", 15.0, 10)
-    name = rose.name
-    age = rose.get_age()
-    height = rose.get_height()
-    print(f"Plant created: {name}: {height:.1f}cm, {age} days old")
+    rose: Plant = Plant("Rose", 15.0, 10)
+    age: int = rose.get_age()
+    height: float = rose.get_height()
+    print(f"Plant created: {rose.name}: {height:.1f}cm, {age} days old")
     print()
 
     rose.set_height(25)
@@ -49,7 +48,7 @@ def main():
     newHeight = rose.get_height()
 
     print()
-    print(f"Current state: {name} : {newHeight:.1f}cm, {newAge} days old")
+    print(f"Current state: {rose.name} : {newHeight:.1f}cm, {newAge} days old")
 
 
 if __name__ == "__main__":

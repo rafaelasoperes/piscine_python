@@ -1,10 +1,10 @@
 class Plant:
-    def __init__(self, name, height, days, grow_plant):
-        self.name = name
-        self.height = height
-        self.days = days
-        self.grow_plant = grow_plant
-        self.initial_height = height
+    def __init__(self, name: str, height: float, days: int, grow_plant):
+        self.name: str = name
+        self.height: float = height
+        self.days: int = days
+        self.grow_plant: float = grow_plant
+        self.initial_height: int = height
 
     def grow(self):
         self.height += self.grow_plant

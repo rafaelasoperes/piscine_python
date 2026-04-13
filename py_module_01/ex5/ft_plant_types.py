@@ -1,8 +1,8 @@
 class Plant:
-    def __init__(self, name, height, age):
-        self.name = name
-        self.height = height
-        self.days = age
+    def __init__(self, name: str, heigth: float, age: int):
+        self.name: str = name
+        self.height: float = heigth
+        self.days: int = age
 
     def grow(self, value):
         self.height = round(self.height + value, 1)
@@ -16,10 +16,10 @@ class Plant:
 
 
 class Flower(Plant):
-    def __init__(self, name, height, age, color):
-        super().__init__(name, height, age)
-        self.color = color
-        self.isValid = False
+    def __init__(self, name: str, heigth: float, age: int, color):
+        super().__init__(name, heigth, age)
+        self.color: str = color
+        self.isValid: bool = False
 
     def bloom(self):
         self.isValid = True

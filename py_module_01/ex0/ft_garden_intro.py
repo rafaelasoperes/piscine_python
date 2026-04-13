@@ -1,7 +1,7 @@
 def main():
-    name = "Manjericão"
-    height = 12.5
-    age = 3
+    name: str = "Manjericão"
+    height: float = 12.5
+    age: int = 3
 
     print("=== Welcome to my Garden ===")
     print(f"Plant {name}")
