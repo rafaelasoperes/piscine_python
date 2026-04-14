@@ -24,11 +24,11 @@ def test_watering_system(plants: list[str]) -> None:
         print(".. ending tests and returning to main")
         return
     finally:
-        print("Closing watering system")
+        print("Closing watering system\n")
 
 
 def main() -> None:
-    print("=== Garden Watering System ===")
+    print("=== Garden Watering System ===\n")
 
     print("Testing valid plants...")
     test_watering_system(["Tomato", "Lettuce", "Carrots"])
