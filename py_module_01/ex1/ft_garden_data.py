@@ -17,8 +17,8 @@ def main():
 
     print("=== Garden Plant Registry ===")
 
-    for i in range(len(garden)):
-        print(garden[i].show())
+    for i in garden:
+        print(i.show())
 
 
 if __name__ == "__main__":
