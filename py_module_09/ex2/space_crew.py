@@ -6,7 +6,8 @@ Objective: Master nested Pydantic models and complex data relationships.
 from datetime import datetime
 from enum import Enum
 from typing import List
-from pydantic import BaseModel, Field, ValidationError, model_validator # noqa f401
+from pydantic import BaseModel, Field  # type:ignore
+from pydantic import ValidationError, model_validator  # type:ignore
 
 
 class Rank(str, Enum):

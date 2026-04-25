@@ -8,7 +8,7 @@ def garden_operations(operation_number: int) -> None:
         file = open("/non/existent/file")
         print(file)
     elif operation_number == 3:
-        resultInt: int = "plants: " + 5
+        resultInt: int = "plants: " + 5  # type: ignore
         print(resultInt)
 
 

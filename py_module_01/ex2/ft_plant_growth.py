@@ -4,7 +4,7 @@ class Plant:
         self.height: float = height
         self.days: int = days
         self.grow_plant: float = grow_plant
-        self.initial_height: int = height
+        self.initial_height: float = height
 
     def grow(self):
         self.height += self.grow_plant
