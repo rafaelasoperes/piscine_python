@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "loading"
+version = "0.1.0"
+description = "Loading Programs exercise"
+authors = ["student"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "*"
+requests = "*"
+matplotlib = "*"
+numpy = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
