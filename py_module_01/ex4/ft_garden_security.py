@@ -4,10 +4,10 @@ class Plant:
         self._height: float = round(height, 1)
         self._age: int = age
 
-    def get_height(self):
+    def get_height(self) -> float:
         return self._height
 
-    def get_age(self):
+    def get_age(self) -> int:
         return self._age
 
     def set_height(self, value):
@@ -32,9 +32,9 @@ class Plant:
 def main():
     print("=== Garden Security System ===")
 
-    rose: Plant = Plant("Rose", 15.0, 10)
-    age: int = rose.get_age()
-    height: float = rose.get_height()
+    rose = Plant("Rose", 15.0, 10)
+    age = rose.get_age()
+    height = rose.get_height()
     print(f"Plant created: {rose.name}: {height:.1f}cm, {age} days old")
     print()
 

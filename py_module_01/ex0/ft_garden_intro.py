@@ -1,5 +1,5 @@
 def main():
-    name: str = "Manjericão"
+    name: str = "Rose"
     height: float = 12.5
     age: int = 3
 

@@ -1,6 +1,6 @@
 class Plant:
     class Stats:
-        def __init__(self):
+        def __init__(self) -> None:
             self.grow_count: int = 0
             self.age_count: int = 0
             self.show_count: int = 0
@@ -37,7 +37,7 @@ class Plant:
 
 
 class Flower(Plant):
-    def __init__(self, name, height, age, color):
+    def __init__(self, name, height, age, color) -> None:
         super().__init__(name, height, age)
         self.color: str = color
         self.isValid: bool = False
@@ -56,7 +56,7 @@ class Flower(Plant):
 
 class Tree(Plant):
     class TreeStats(Plant.Stats):
-        def __init__(self):
+        def __init__(self) -> None:
             super().__init__()
             self.shade_count: int = 0
 
@@ -64,7 +64,7 @@ class Tree(Plant):
             super().display()
             print(f" {self.shade_count} shade")
 
-    def __init__(self, name, height, age, trunk):
+    def __init__(self, name, height, age, trunk) -> None:
         super().__init__(name, height, age)
         self.trunk: float = round(trunk, 1)
         self.stats = self.TreeStats()
@@ -80,7 +80,7 @@ class Tree(Plant):
 
 
 class Seed(Flower):
-    def __init__(self, name, height, age, color):
+    def __init__(self, name, height, age, color) -> None:
         super().__init__(name, height, age, color)
         self.seeds: int = 0
         self.isValid: bool = False
@@ -112,7 +112,7 @@ def main():
     print()
 
     print("=== Flower")
-    rose: Flower = Flower("Rose", 15.0, 10, "red")
+    rose = Flower("Rose", 15.0, 10, "red")
     rose.show()
     display_any_plant_stats(rose)
 
@@ -124,7 +124,7 @@ def main():
     print()
 
     print("=== Tree")
-    oak: Tree = Tree("Oak", 200.0, 365, 5.0)
+    oak = Tree("Oak", 200.0, 365, 5.0)
     oak.show()
     display_any_plant_stats(oak)
 
@@ -134,7 +134,7 @@ def main():
     print()
 
     print("=== Seed")
-    sunflower: Seed = Seed("Sunflower", 80.0, 45, "yellow")
+    sunflower = Seed("Sunflower", 80.0, 45, "yellow")
     sunflower.show()
 
     print("[make sunflower grow, age and bloom]")
@@ -146,7 +146,7 @@ def main():
     print()
 
     print("=== Anonymous")
-    anon: Plant = Plant.create_anonymous()
+    anon = Plant.create_anonymous()
     anon.show()
     display_any_plant_stats(anon)
 
